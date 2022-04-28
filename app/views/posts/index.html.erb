@@ -1,0 +1,24 @@
+<div class="container pt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="pb-4">Message Board</h2>
+      <% @posts.each do |post| %>
+        <div class="row">
+          <div class="col">
+            <%= post.title %> <strong>by</strong> <%= post.author.name %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <%= post.body %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <small>Created at: <%= post.created_at.strftime("%FT%T") %></small>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
