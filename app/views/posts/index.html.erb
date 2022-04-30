@@ -6,7 +6,7 @@
           <span class="fs-1">Message Board</span>
         </div>
         <div class="col d-flex">
-          <a class="btn btn-primary float-end my-auto" href="/posts/new" role="button">Create Post</a>
+          <%= link_to "Create Post", new_post_path, class: "btn btn-primary my-auto", data: { turbo_frame: "post_remote_modal" } %>
         </div>
       </div>
       <% @posts.each do |post| %>
@@ -14,7 +14,7 @@
           <div class="col">
             <a href="/posts/<%= post.id %>" class="text-decoration-none">
               <div class="row">
-                <span class="fs-3"><%= post.title %></span>
+                <span class="fs-4 pb-2"><%= post.title %></span>
               </div>
             </a>
             <i class="mt-0 fs-6 text-muted">

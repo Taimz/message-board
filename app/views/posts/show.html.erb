@@ -3,7 +3,7 @@
     <div class="col-md-8">
       <div class="row pb-5 mb-0 border-bottom">
         <div class="col-10">
-          <span class="fs-1">Post Details</span>
+          <span class="fs-1"><%= @post.title %></span>
         </div>
         <div class="col d-flex">
           <a class="float-end my-auto" href="/posts">Back to List</a>
@@ -17,8 +17,8 @@
             </i>
           </div>
           <div class="row">
-            <span class="fs-3"><%= @post.title %></span>
-            <p class="fs-5 py-2 mb-0 text-secondary"><%= @post.body %></p>
+<!--            <span class="fs-3"><%#= @post.title %></span>-->
+            <p class="fs-5 py-2 mb-0 text-dark"><%= @post.body %></p>
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@
             </div>
             <div class="col-1 offset-1">
               <div class="row">
-                <%= link_to "Add", new_comment_path(post_id: @post.id), class: "btn btn-primary my-auto py-1", data: { turbo_frame: "remote_modal" }%>
+                <%= link_to "Add", new_comment_path(post_id: @post.id), class: "btn btn-primary my-auto py-1", data: { turbo_frame: "remote_modal" } %>
               </div>
             </div>
           </div>
