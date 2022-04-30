@@ -3,4 +3,6 @@ class Post < ApplicationRecord
   has_many :comments
 
   paginates_per 5
+
+  validates_presence_of :title, :body
 end
