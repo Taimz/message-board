@@ -11,6 +11,9 @@
   </head>
 
   <body>
+  <% if current_user %>
+    <%= render "navbar/navbar" %>
+  <% end %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
