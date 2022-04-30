@@ -9,17 +9,45 @@
           <a class="float-end my-auto" href="/posts">Back to List</a>
         </div>
       </div>
-      <div class="row py-4 border-bottom">
+      <div class="row py-4">
         <div class="col">
           <div class="row">
-            <span class="fs-3"><%= @post.title %></span>
-            <p class="fs-5 py-2 text-secondary"><%= @post.body %></p>
+            <i class="mt-0 fs-6 pb-3 text-muted">
+              Posted by <strong><%= @post.author.name %></strong> on <%= @post.created_at.strftime("%A, %B %d, %Y") %>
+            </i>
           </div>
-          <i class="mt-0 fs-6 text-muted">
-            Posted by <strong><%= @post.author.name %></strong> on <%= @post.created_at.strftime("%A, %B %d, %Y") %>
-          </i>
+          <div class="row">
+            <span class="fs-3"><%= @post.title %></span>
+            <p class="fs-5 py-2 mb-0 text-secondary"><%= @post.body %></p>
+          </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-10">
+          <div class="row py-3 border-bottom border-top">
+            <div class="col-10">
+              <span class="fs-5 text-primary">Comments</span>
+            </div>
+            <div class="col-1 offset-1">
+              <div class="row">
+                <a class="btn btn-primary float-end my-auto py-1" href="/comments/new" role="button">Add</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Comments -->
+      <% @post.comments.each do |comment| %>
+        <div class="row">
+          <div class="col-10 py-4 border-bottom">
+            <small><i class="mt-0 pb-2 text-muted">
+              <strong><%= comment.author.name %></strong> on <%= comment.created_at.strftime("%A, %B %d, %Y") %>
+            </i></small>
+            <p class="fs-6 pt-2 mb-0 text-secondary"><%= comment.body %></p>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

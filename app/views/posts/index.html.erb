@@ -17,9 +17,6 @@
                 <span class="fs-3"><%= post.title %></span>
               </div>
             </a>
-            <div class="row">
-              <p class="fs-5 py-2 text-secondary"><%= post.body %></p>
-            </div>
             <i class="mt-0 fs-6 text-muted">
               Posted by <strong><%= post.author.name %></strong> on <%= post.created_at.strftime("%A, %B %d, %Y") %>
             </i>
