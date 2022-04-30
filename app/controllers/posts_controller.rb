@@ -2,10 +2,12 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show]
 
   def index
-    @posts = Post.order(id: :desc).all
+    @posts = Post.order(id: :desc).page(params[:page] || 1)
   end
 
-  def show; end
+  def show
+    @comments = @post.comments.page(params[:page] || 1)
+  end
 
   def new
     @post = Post.new

@@ -30,14 +30,14 @@
             </div>
             <div class="col-1 offset-1">
               <div class="row">
-                <%= link_to "Add", new_comment_path(post_id: @post.id), class: "btn btn-primary my-auto py-1", data: { turbo_frame: "remote_modal" } %>
+                <%= link_to "Add", new_comment_path(post_id: @post.id), class: "btn btn-primary my-auto py-1", data: { turbo_frame: "comment_remote_modal" } %>
               </div>
             </div>
           </div>
         </div>
       </div>
       <!-- Comments -->
-      <% @post.comments.each do |comment| %>
+      <% @comments.each do |comment| %>
         <div class="row">
           <div class="col-10 py-4 border-bottom">
             <small><i class="mt-0 pb-2 text-muted">
@@ -47,6 +47,11 @@
           </div>
         </div>
       <% end %>
+      <div class="row">
+        <div class="col-3 offset-9 py-4">
+          <%= paginate @comments %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
