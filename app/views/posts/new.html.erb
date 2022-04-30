@@ -1,0 +1,22 @@
+<div class="container pt-5 mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="pb-4">New Post</h2>
+      <%= form_with model: @post do |f| %>
+        <div class="mb-3">
+          <%= f.label :title, class: "form-label" %>
+          <%= f.text_field :title, autofocus: true, class: 'form-control' %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :body, class: "form-label" %>
+          <%= f.text_area :body, autocomplete: "name", class: 'form-control' %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.submit 'Submit', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,21 +1,28 @@
 <div class="container pt-5">
   <div class="row justify-content-center">
-    <div class="col-md-6">
-      <h2 class="pb-4">Message Board</h2>
+    <div class="col-md-8">
+      <div class="row pb-5 mb-0 border-bottom">
+        <div class="col-10">
+          <span class="fs-1">Message Board</span>
+        </div>
+        <div class="col d-flex">
+          <a class="btn btn-primary float-end my-auto" href="/posts/new" role="button">Create Post</a>
+        </div>
+      </div>
       <% @posts.each do |post| %>
-        <div class="row">
+        <div class="row py-4 border-bottom">
           <div class="col">
-            <%= post.title %> <strong>by</strong> <%= post.author.name %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <%= post.body %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <small>Created at: <%= post.created_at.strftime("%FT%T") %></small>
+            <a href="/posts/<%= post.id %>" class="text-decoration-none">
+              <div class="row">
+                <span class="fs-3"><%= post.title %></span>
+              </div>
+            </a>
+            <div class="row">
+              <p class="fs-5 py-2 text-secondary"><%= post.body %></p>
+            </div>
+            <i class="mt-0 fs-6 text-muted">
+              Posted by <strong><%= post.author.name %></strong> on <%= post.created_at.strftime("%A, %B %d, %Y") %>
+            </i>
           </div>
         </div>
       <% end %>

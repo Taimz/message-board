@@ -1,0 +1,25 @@
+<div class="container pt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="row pb-5 mb-0 border-bottom">
+        <div class="col-10">
+          <span class="fs-1">Post Details</span>
+        </div>
+        <div class="col d-flex">
+          <a class="float-end my-auto" href="/posts" role="button">Back to List</a>
+        </div>
+      </div>
+      <div class="row py-4 border-bottom">
+        <div class="col">
+          <div class="row">
+            <span class="fs-3"><%= @post.title %></span>
+            <p class="fs-5 py-2 text-secondary"><%= @post.body %></p>
+          </div>
+          <i class="mt-0 fs-6 text-muted">
+            Posted by <strong><%= @post.author.name %></strong> on <%= @post.created_at.strftime("%A, %B %d, %Y") %>
+          </i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
