@@ -30,10 +30,9 @@
             </div>
             <div class="col-1 offset-1">
               <div class="row">
-                <a class="btn btn-primary float-end my-auto py-1" href="/comments/new" role="button">Add</a>
+                <%= link_to "Add", new_comment_path(post_id: @post.id), class: "btn btn-primary my-auto py-1", data: { turbo_frame: "remote_modal" }%>
               </div>
             </div>
-
           </div>
         </div>
       </div>
