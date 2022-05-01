@@ -3,10 +3,6 @@
 require 'rails_helper'
 
 describe User do
-  it 'has a valid factory' do
-    expect(build(:user)).to be_valid
-  end
-
   it 'is valid with a name, email, password and password confirmation' do
     user = described_class.new(email: 'test@example.com',
                                name: 'test_name',
