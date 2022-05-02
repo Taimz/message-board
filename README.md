@@ -1,24 +1,12 @@
-# README
+# Message Board
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Versions used:
+- Ruby: 2.7.3
+- Rails: 7.0.2.4
+- Yarn: 1.22.10
 
-Things you may want to cover:
+### Run App:
+- `rails s`
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Run tests:
+- `rspec`
